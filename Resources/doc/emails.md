@@ -43,6 +43,16 @@ by service id:
 - `fos_user.mailer.twig_swift` uses Swiftmailer to send emails and Twig blocks to render the message.
 - `fos_user.mailer.noop` is a mailer implementation which performs no operation, so no emails are sent.
 
+You set the mailer using the `fos_user.service.mailer` setting:
+
+``` yaml
+# app/config/config.yml
+
+fos_user:
+    # ...
+    service:
+        mailer: fos_user.mailer.twig_swift
+
 **Note:**
 
 > The `fos_user.mailer.noop` mailer service should be used in the case where you do not want
